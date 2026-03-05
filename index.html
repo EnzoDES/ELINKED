@@ -162,10 +162,6 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
     <source src="LA PLANETE DES SINGES _ LES ORIGINES - VF.mp4" type="video/mp4">
     Votre navigateur ne supporte pas la vidéo.
   </video>
-  <div>
-    <button onclick="prevVideo()">Précédent</button>
-    <button onclick="nextVideo()">Suivant</button>
-  </div>
 </div>
 
 <style>
@@ -210,10 +206,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Défiler automatiquement toutes les 5 secondes
   setInterval(nextVideo, 10000);
-
-  // Rendre les fonctions accessibles aux boutons
-  window.nextVideo = nextVideo;
-  window.prevVideo = prevVideo;
 });
 </script>
 <footer>
@@ -222,6 +214,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
+
 
 
 
