@@ -58,17 +58,6 @@
             height: 600px;	
 		}
 
-		.phone-wrapper {
-  position: relative;
-  width: 300px; /* largeur du téléphone */
-  margin: 20px auto;
-}
-
-.phone-frame {
-  width: 100%;
-  display: block;
-}
-
     </style>
 </head>
 <body>
@@ -147,41 +136,6 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
     </a>
 </div>
 
-	<div class="phone-wrapper">
-  <img src="mockup_apple_iphone_11_9091e12115.png" alt="Téléphone" class="phone-frame">
-  <video class="phone-video" autoplay loop muted playsinline>
-    <source src="LA PLANETE DES SINGES _ LES ORIGINES - VF.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la vidéo.
-  </video>
-	</div>
-  <button onclick="prevVideo()">Précédent</button>
-  <button onclick="nextVideo()">Suivant</button>
-
-  <script>
-    const videos = ["<body>
-  <!-- ton code HTML du téléphone et de la vidéo ici -->
-
-  <button onclick="prevVideo()">Précédent</button>
-  <button onclick="nextVideo()">Suivant</button>
-
-  <script>
-    const videos = ["LA PLANETE DES SINGES _ LES ORIGINES - VF.mp4", "video2.mp4", "video3.mp4"];
-    let current = 0;
-    const videoElem = document.querySelector(".phone-video");
-
-    function nextVideo() {
-      current = (current + 1) % videos.length;
-      videoElem.src = videos[current];
-      videoElem.play();
-    }
-
-    function prevVideo() {
-      current = (current - 1 + videos.length) % videos.length;
-      videoElem.src = videos[current];
-      videoElem.play();
-    }
-  </script>
-        
 <div class="card">
     <h2>📱 Suis-moi sur les réseaux !</h2>  
 
@@ -202,12 +156,73 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" style="width:16px; height:16px;"> Instagram
                 </a>
 </div>
+
+	<div class="video-wrapper">
+  <video class="carousel-video" autoplay muted playsinline>
+    <source src="video1.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+  <div>
+    <button onclick="prevVideo()">Précédent</button>
+    <button onclick="nextVideo()">Suivant</button>
+  </div>
+</div>
+
+<style>
+.video-wrapper {
+  width: 300px;
+  margin: 50px auto;
+  text-align: center;
+}
+video.carousel-video {
+  width: 100%;
+  border-radius: 10px;
+  background: #000;
+}
+button {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const videos = ["video1.mp4", "video2.mp4", "video3.mp4"]; // mets ici tes vidéos
+  let current = 0;
+  const videoElem = document.querySelector(".carousel-video");
+
+  function showVideo(index) {
+    videoElem.src = videos[index];
+    videoElem.play();
+  }
+
+  function nextVideo() {
+    current = (current + 1) % videos.length;
+    showVideo(current);
+  }
+
+  function prevVideo() {
+    current = (current - 1 + videos.length) % videos.length;
+    showVideo(current);
+  }
+
+  // Défiler automatiquement toutes les 5 secondes
+  setInterval(nextVideo, 5000);
+
+  // Rendre les fonctions accessibles aux boutons
+  window.nextVideo = nextVideo;
+  window.prevVideo = prevVideo;
+});
+</script>
 <footer>
     <p>Copyright © 2026 by ebyvousez_ / All rights reserved</p>
 </footer>
 
 </body>
 </html>
+
 
 
 
