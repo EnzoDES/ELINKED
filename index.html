@@ -118,15 +118,9 @@
 N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes 🔥👍
     </p>
 </div>
-
-	<div id="live-btn-wrapper" style="text-align:center; margin-top:20px;">
-  <button id="show-live-btn">
-    🔴 Live - Regarder le live
-  </button>
+	<div class="card">
+   <h2> 🔴 Live - Regarder le live </h2>
 </div>
-<div class="card">
-<!-- Fenêtre Twitch (initialement cachée) -->
-<div id="twitch-live" style="display:none; margin-top:20px; text-align:center;">
   <iframe
     src="https://player.twitch.tv/?channel=maxenvrai_&parent=enzodes.github.io"
     width="640"
@@ -138,11 +132,6 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
 <script>
   const btn = document.getElementById("show-live-btn");
   const liveDiv = document.getElementById("twitch-live");
-
-  btn.addEventListener("click", () => {
-    liveDiv.style.display = "block"; // Affiche le live
-    btn.style.display = "none";       // Cache le bouton
-  });
 </script>
 	
 <div class="card"> 
@@ -160,7 +149,6 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
        target="_blank">
         🔎 Voir sur Disboard
     </a>
-</div>
 </div>
 <div class="card">
 	 <h2>📱 Suis-moi sur les réseaux !</h2>  
@@ -239,6 +227,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
+
 
 
 
