@@ -69,15 +69,6 @@
   display: block;
 }
 
-.phone-video {
-  position: absolute;
-  top: 12%;    /* ajuste selon la position de l’écran sur ton PNG */
-  left: 12%;   /* idem */
-  width: 76%;  /* largeur de l’écran */
-  height: 76%; /* hauteur de l’écran */
-  object-fit: cover;
-  border-radius: 20px; /* si tu veux des coins arrondis comme un écran */
-}
     </style>
 </head>
 <body>
@@ -162,7 +153,33 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
     <source src="LA PLANETE DES SINGES _ LES ORIGINES - VF.mp4" type="video/mp4">
     Votre navigateur ne supporte pas la vidéo.
   </video>
-</div>
+	</div>
+  <button onclick="prevVideo()">Précédent</button>
+  <button onclick="nextVideo()">Suivant</button>
+
+  <script>
+    const videos = ["<body>
+  <!-- ton code HTML du téléphone et de la vidéo ici -->
+
+  <button onclick="prevVideo()">Précédent</button>
+  <button onclick="nextVideo()">Suivant</button>
+
+  <script>
+    const videos = ["LA PLANETE DES SINGES _ LES ORIGINES - VF.mp4", "video2.mp4", "video3.mp4"];
+    let current = 0;
+    const videoElem = document.querySelector(".phone-video");
+
+    function nextVideo() {
+      current = (current + 1) % videos.length;
+      videoElem.src = videos[current];
+      videoElem.play();
+    }
+
+    function prevVideo() {
+      current = (current - 1 + videos.length) % videos.length;
+      videoElem.src = videos[current];
+      videoElem.play();
+    }
         
 <div class="card">
     <h2>📱 Suis-moi sur les réseaux !</h2>  
@@ -190,6 +207,7 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
 
 </body>
 </html>
+
 
 
 
