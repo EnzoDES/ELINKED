@@ -57,6 +57,27 @@
             width: 100%;
             height: 600px;	
 		}
+
+		.phone-wrapper {
+  position: relative;
+  width: 300px; /* largeur du téléphone */
+  margin: 20px auto;
+}
+
+.phone-frame {
+  width: 100%;
+  display: block;
+}
+
+.phone-video {
+  position: absolute;
+  top: 12%;    /* ajuste selon la position de l’écran sur ton PNG */
+  left: 12%;   /* idem */
+  width: 76%;  /* largeur de l’écran */
+  height: 76%; /* hauteur de l’écran */
+  object-fit: cover;
+  border-radius: 20px; /* si tu veux des coins arrondis comme un écran */
+}
     </style>
 </head>
 <body>
@@ -121,7 +142,8 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
 <div class="card"> 
     <h2>📌 Rejoins les Vrais ! Ici 👇</h2>
 
-    <iframe     src="https://discord.com/widget?id=1447589127624331286&theme=dark"
+    <iframe     src="https://discord.com/widget?id=1447589127624331286&theme=dark"
+
         width="100%" 
         height="500"
         allowtransparency="true"
@@ -132,6 +154,14 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
        target="_blank">
         🔎 Voir sur Disboard
     </a>
+</div>
+
+	<div class="phone-wrapper">
+  <img src="phone-frame.png" alt="Téléphone" class="phone-frame">
+  <video class="phone-video" autoplay loop muted playsinline>
+    <source src="LA PLANETE DES SINGES _ LES ORIGINES - VF.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
 </div>
         
 <div class="card">
@@ -159,7 +189,9 @@ N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes
 </footer>
 
 </body>
-</html>
+</html>
+
+
 
 
 
