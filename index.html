@@ -22,91 +22,51 @@
 <head>
 <meta charset="UTF-8">
 
-<style>
-
-html{
-scroll-behavior:smooth;
+   <style>
+body {
+    background-image: url('fond.png'); 
+    background-size: cover;
+    background-position: center;  
+    background-repeat: no-repeat; 
+    font-family: Arial, sans-serif;
+    background-color: #2c2f33;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
 }
 
-body{
-margin:0;
-font-family:Arial;
-background-image: url('fond.png');
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
-color: black;
+/* 🔝 HEADER NOIR */
+header {
+    padding: 20px;
+    background: black;
 }
 
-/* HEADER */
-header{
-background:rgba(35,39,42,0.9);
-text-align:center;
-padding:40px;
+/* TITRE */
+h1 {
+    color: #ffffff;
 }
 
-/* NAVBAR */
-nav{
-color: black;
-padding:15px;
-text-align:center;
-position:sticky;
-top:0;
-z-index:1000;
+/* 💥 CARTES */
+.card {
+    background-color: #23272a;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+
+    transition: 0.3s ease;
+    transform: translateY(0);
 }
 
-nav a{
-color:black;
-margin:10px;
-text-decoration:none;
-font-weight:bold;
+/* 💫 FLOAT EFFECT */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
-nav a:hover{
-color:#7289da;
-}
-
-/* HERO */
-.hero{
-text-align:center;
-padding:60px 20px;
-}
-
-/* SECTIONS */
-section{
-max-width:1100px;
-margin:auto;
-padding:60px;
-scroll-margin-top:80px;
-}
-
-/* CARDS */
-.card{
-background:rgba(35,39,42,0.95);
-padding:25px;
-margin:25px 0;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.5);
-text-align:center;
-}
-
-/* TITRES */
-h2{
-border-bottom:3px solid #7289da;
-padding-bottom:10px;
-}
-
-
-.button-container{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:10px;
-margin-top:15px;
-}
-
-/* 🎯 STYLE IDENTIQUE PORTFOLIO */
-.btn{
+/* BOUTONS */
+a.button {
     display: inline-block;
     padding: 12px 24px;
     margin: 12px 0;
@@ -115,164 +75,96 @@ margin-top:15px;
     text-decoration: none;
     border-radius: 5px;
     font-size: 18px;
+    transition: 0.3s;
 }
 
-
-/* hover */
-.btn:hover{
-background:#5b6eae;
-transform: translateY(-2px);
-}
-
-/* LOGOS */
-.btn img{
-width:18px;
-height:18px;
-filter: none; /* garde couleurs logo si possible */
-}
-
-/* LOGOS NOIRS */
-
-/* CONTENEUR VERTICAL */
-.social-stack{
-display:flex;
-flex-direction:column;
-align-items:center;
-gap:12px;
-margin-top:20px;
-}
-
-/* BOUTONS */
-.social-btn{
-display:flex;
-align-items:center;
-gap:10px;
-padding:12px 20px;
-background:#7289da;
-color:white;
-text-decoration:none;
-border-radius:8px;
-font-weight:bold;
-width:200px;
-justify-content:center;
-cursor:pointer;
-
-/* animation entrée */
-opacity:0;
-transform: translateY(20px);
-animation: fadeInUp 0.6s forwards;
-
-transition:0.3s ease;
-}
-
-/* apparition progressive */
-.social-stack a:nth-child(1){ animation-delay:0.1s; }
-.social-stack a:nth-child(2){ animation-delay:0.2s; }
-.social-stack a:nth-child(3){ animation-delay:0.3s; }
-.social-stack a:nth-child(4){ animation-delay:0.4s; }
-
-/* LOGOS */
-.social-btn img{
-width:18px;
-height:18px;
-filter: invert(0);
-}
-
-/* HOVER PRO */
-.social-btn:hover{
-transform: translateY(-5px) scale(1.05);
-box-shadow:0 12px 25px rgba(0,0,0,0.4);
-background:#5b6eae;
-}
-
-/* ANIMATION APPARITION */
-@keyframes fadeInUp{
-to{
-opacity:1;
-transform: translateY(0);
-}
-}
-
-/* PULSE AU HOVER */
-.social-btn:hover{
-animation: pulse 0.5s;
-}
-
-@keyframes pulse{
-0%{ transform: translateY(-5px) scale(1.05); }
-50%{ transform: translateY(-5px) scale(1.08); }
-100%{ transform: translateY(-5px) scale(1.05); }
-}
-/* FOOTER */
-footer{
-background:rgba(35,39,42,0.9);
-text-align:center;
-padding:20px;
+a.button:hover {
+    transform: scale(1.05);
 }
 
 /* IFRAME */
-iframe{
-width:100%;
-height:400px;
-border:none;
-border-radius:10px;
+iframe {
+    border: none;
+    width: 100%;
+    height: 600px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-/* VIDEO PHONE */
-.phone-video-wrapper {
-width:300px;
-height:600px;
-margin:30px auto;
-padding:10px;
-border:15px solid #000;
-border-radius:40px;
-background:#000;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
-display:flex;
-align-items:center;
-justify-content:center;
+/* 📌 NAVBAR FIXE (si tu en as une) */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.phone-video {
-width:100%;
-height:100%;
-border-radius:25px;
-object-fit:cover;
+/* 🔻 FOOTER NOIR */
+footer {
+    background: black;
+    padding: 20px;
 }
 
-</style>
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+	h1, h2, h3, p, strong {
+        font-size: clamp(12px, 4vw, 32px);
+    }
+
+    .card {
+        margin: 15px 5px;
+        padding: 15px;
+    }
+
+    a.button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .phone-video-wrapper {
+        width: 80%;               
+        max-width: 300px;       
+        aspect-ratio: 1/2;        
+        margin: 30px auto;
+        padding: 10px;
+        border: 15px solid #000;
+        border-radius: 40px;
+        background: #000;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .phone-video {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        object-fit: cover;
+    }
+}
+    </style>
 </head>
-
 <body>
-
 <header>
-
-<img src="maxenvrai_.png"
-style="width:120px;height:120px;border-radius:50%;display:block;margin:auto;">
-
-<h2>MaxenVrai_</h2>
-<p>Bienvenue chez les Vrais 🔥</p>
-
+	<body>
+<img src="maxenvrai_.png" alt="Photo Les Vrais"
+     style="
+        width:120px;
+        height:120px;
+        object-fit:cover;
+        border-radius:50%;
+        display:block;
+        margin:20px auto;
+     ">
+		<strong>MaxenVrai_</strong>
+    <h1>📢 Bienvenue chez les Vrais !</h1>
+    <p>Tu souhaite nous rejoindre ? Retrouve nos differentes pages web ci-dessous 👇</p> 
 </header>
+	<div class="card">
+    <h2>👥 Qui sommes-nous ?</h2>
 
-<nav>
-<a href="#accueil">Accueil</a>
-<a href="#commu">Communauté</a>
-<a href="#live">Live</a>
-<a href="#discord">Discord</a>
-<a href="#reseaux">Réseaux</a>
-</nav>
-
-<div class="hero" id="accueil">
-<h1>📢 Bienvenue chez les Vrais !</h1>
-<p>Tu souhaites nous rejoindre ? 👇</p>
-</div>
-
-<section id="commu">
-
-<h2>👥 Qui sommes-nous ?</h2>
-
- Les Vrais, c’est une communauté active et conviviale dont le but principal
+    <p>
+        Les Vrais, c’est une communauté active et conviviale dont le but principal
         est de s’amuser et jouer ensemble 🎮.
     </p>
 
@@ -306,47 +198,40 @@ style="width:120px;height:120px;border-radius:50%;display:block;margin:auto;">
         👉 <strong>Toi aussi, deviens un Vrai !</strong><br>
 N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes 🔥👍
     </p>
-
-<p><strong>Rejoins-nous et deviens un Vrai 😎</strong></p>
-
 </div>
-</section>
+	<div class="card">
+   <h2> 🔴 Live - Regarder le live </h2>
+  <iframe
+    src="https://player.twitch.tv/?channel=maxenvrai_&parent=enzodes.github.io"
+    width="500"
+    height="360"
+    allowfullscreen>
+  </iframe>
+		
+ <a class="button" href="https://www.twitch.tv/maxenvrai_" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:5px;">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitch.svg" alt="Twitch" style="width:16px; height:16px;"> Voir sur Twitch
+				</a>
 
-<section id="live">
-<div class="card">
+<script>
+  const liveDiv = document.getElementById("twitch-live");
+</script>
+	</div>
+	
+<div class="card"> 
+    <h2>📌 Rejoins les Vrais ! Ici 👇</h2>
 
-<h2>🔴 Live Twitch</h2>
+    <iframe     src="https://discord.com/widget?id=1447589127624331286&theme=dark"
 
-<iframe src="https://player.twitch.tv/?channel=maxenvrai_&parent=enzodes.github.io"></iframe>
-
-<div class="button-container">
-<a href="https://www.twitch.tv/maxenvrai_" target="_blank" class="social-btn">
-<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitch.svg">
-Twitch
-</a>
+        width="100%" 
+        height="500"
+        allowtransparency="true"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+    </iframe>
+ <a class="button" href="https://disboard.org/fr/server/1447589127624331286" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:5px;">  
+ <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord" style="width:16px; height:16px;"> Voir sur Disboard
+ </a>
 </div>
-
-</div>
-</section>
-
-<section id="discord">
-<div class="card">
-
-<h2>📌 Rejoins les Vrais ! Ici 👇</h2>
-
-<iframe src="https://discord.com/widget?id=1447589127624331286&theme=dark"></iframe>
-
-<div class="button-container">
-<a href="https://disboard.org/fr/server/1447589127624331286" target="_blank" class="social-btn">
-<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg">
-Disboard
-</a>
-</div>
-
-</div>
-</section>
-
-<section id="reseaux">
+	
 <div class="card">
 	 <h2>📱 Suis-moi sur les réseaux !</h2>  
 	<div class="phone-video-wrapper">
@@ -423,26 +308,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
