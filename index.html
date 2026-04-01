@@ -105,12 +105,26 @@ gap:10px;
 margin-top:10px;
 }
 
-/* SOCIAL BUTTONS */
+/* LOGOS NOIRS */
+.social-btn img{
+width:18px;
+height:18px;
+filter: invert(0); /* noir pur */
+}
+
+/* CONTENEUR EN ESCALIER */
+.social-stack{
+display:flex;
+flex-direction:column;
+align-items:center;
+margin-top:20px;
+}
+
+/* BOUTONS */
 .social-btn{
 display:flex;
 align-items:center;
-justify-content:center;
-gap:8px;
+gap:10px;
 padding:12px 20px;
 background:#7289da;
 color:white;
@@ -118,16 +132,19 @@ text-decoration:none;
 border-radius:8px;
 font-weight:bold;
 transition:0.3s;
+width:180px;
+justify-content:center;
 }
 
-.social-btn img{
-width:18px;
-height:18px;
-filter: invert(1);
-}
+/* ESCALIER (décalage gauche droite) */
+.s1{ transform: translateX(-60px); }
+.s2{ transform: translateX(-20px); }
+.s3{ transform: translateX(20px); }
+.s4{ transform: translateX(60px); }
 
 .social-btn:hover{
 background:#5b6eae;
+transform: scale(1.05);
 }
 
 /* FOOTER */
@@ -200,8 +217,41 @@ style="width:120px;height:120px;border-radius:50%;display:block;margin:auto;">
 
 <h2>👥 Qui sommes-nous ?</h2>
 
-<p>Les Vrais, c’est une communauté active et conviviale 🎮</p>
-<p>Ambiance détendue, respect et fun 🔥</p>
+ Les Vrais, c’est une communauté active et conviviale dont le but principal
+        est de s’amuser et jouer ensemble 🎮.
+    </p>
+
+    <p>
+        Notre serveur Discord a été créé pour rassembler des personnes passionnées et respectueuses, dans une ambiance détendue et bienveillante.
+    </p>
+
+    <p>
+        Ici, chacun peut discuter librement, rencontrer de nouvelles personnes
+        et profiter des événements organisés par le staff 🗓️,
+        toujours dans le respect et la bonne humeur.
+    </p>
+
+    <p>
+        Que tu sois joueur, créateur de contenu ou simplement à la recherche
+        d’un endroit sympa, tu trouveras ta place chez Les Vrais 😎.
+    </p>
+
+    <p>
+        Peu importe qui tu es ou le jeu que tu aimes,
+        tu trouveras toujours quelqu’un pour partager un bon moment ❤️.
+    </p>
+
+    <p><strong>
+        Notre objectif est simple :
+        créer une vraie communauté, où tout le monde peut s’amuser,
+        échanger et passer de bons moments ensemble.
+    </strong></p>
+
+    <p>
+        👉 <strong>Toi aussi, deviens un Vrai !</strong><br>
+N’hésite pas à suivre <strong>MaxenVrai_</strong> sur toutes ses plateformes 🔥👍
+    </p>
+
 <p><strong>Rejoins-nous et deviens un Vrai 😎</strong></p>
 
 </div>
@@ -252,24 +302,24 @@ Disboard
 </video>
 </div>
 
-<div class="button-container">
+<div class="social-stack">
 
-<a href="https://www.twitch.tv/maxenvrai_" target="_blank" class="social-btn">
+<a href="https://www.twitch.tv/maxenvrai_" target="_blank" class="social-btn s1">
 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitch.svg">
 Twitch
 </a>
 
-<a href="https://www.tiktok.com/@maxenvrai_" target="_blank" class="social-btn">
+<a href="https://www.tiktok.com/@maxenvrai_" target="_blank" class="social-btn s2">
 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg">
 TikTok
 </a>
 
-<a href="https://www.youtube.com/@MaxenVraiYTB" target="_blank" class="social-btn">
+<a href="https://www.youtube.com/@MaxenVraiYTB" target="_blank" class="social-btn s3">
 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg">
 YouTube
 </a>
 
-<a href="https://www.instagram.com/maxenvrai_" target="_blank" class="social-btn">
+<a href="https://www.instagram.com/maxenvrai_" target="_blank" class="social-btn s4">
 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg">
 Instagram
 </a>
