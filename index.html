@@ -96,13 +96,43 @@ border-bottom:3px solid #7289da;
 padding-bottom:10px;
 }
 
-/* BOUTONS CENTRÉS */
+
 .button-container{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
 gap:10px;
-margin-top:10px;
+margin-top:15px;
+}
+
+/* 🎯 STYLE IDENTIQUE PORTFOLIO */
+.btn{
+padding:15px 25px;
+font-size:16px;
+background-color:#7289da;
+color:#000; /* texte noir */
+border:none;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+text-decoration:none;
+display:inline-flex;
+align-items:center;
+gap:10px;
+font-weight:bold;
+}
+
+/* hover */
+.btn:hover{
+background:#5b6eae;
+transform: translateY(-2px);
+}
+
+/* LOGOS */
+.btn img{
+width:18px;
+height:18px;
+filter: none; /* garde couleurs logo si possible */
 }
 
 /* LOGOS NOIRS */
@@ -332,7 +362,7 @@ Disboard
 </video>
 </div>
 
-<div class="social-stack">
+<div class="button-container">
 
 <a href="https://www.twitch.tv/maxenvrai_" class="btn">
 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitch.svg">
@@ -355,10 +385,10 @@ Instagram
 </a>
 
 <a href="https://disboard.org/fr/server/1447589127624331286" class="btn">
-<span class="discord-icon">Ⓓ</span>
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg">
 Discord
 </a>
-	
+
 </div>
 
 </div>
