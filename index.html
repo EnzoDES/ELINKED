@@ -353,50 +353,36 @@ Disboard
 
 <section id="reseaux">
 <div class="card">
-
-<h2>📱 Suis-moi sur les réseaux !</h2>
-
-<div class="phone-video-wrapper">
-<video class="phone-video" autoplay playsinline loop>
-<source src="MAUVAISE IDÉE.mp4">
-</video>
+	 <h2>📱 Suis-moi sur les réseaux !</h2>  
+	<div class="phone-video-wrapper">
+  <video class="phone-video" autoplay playsinline loop>
+    <source src="MAUVAISE IDÉE.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
 </div>
 
-<div class="button-container">
+<style>
+.phone-video-wrapper {
+  width: 300px;
+  height: 600px;
+  margin: 50px auto;
+  padding: 10px;
+  border: 15px solid #000;
+  border-radius: 40px;
+  background: #000;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-<a href="https://www.twitch.tv/maxenvrai_" class="btn">
-<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitch.svg">
-Twitch
-</a>
-
-<a href="https://www.tiktok.com/@maxenvrai_" class="btn">
-<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg">
-TikTok
-</a>
-
-<a href="https://www.youtube.com/@MaxenVraiYTB" class="btn">
-<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg">
-YouTube
-</a>
-
-<a href="https://www.instagram.com/maxenvrai_" class="btn">
-<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg">
-Instagram
-</a>
-
-<a href="https://disboard.org/fr/server/1447589127624331286" class="btn">
-<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg">
-Discord
-</a>
-
-</div>
-
-</div>
-</section>
-
-<footer>
-<p>© 2026 ebyvousez_ / All reserved right</p>
-</footer>
+.phone-video {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  object-fit: cover;
+}
+</style>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -405,19 +391,40 @@ document.addEventListener("DOMContentLoaded", function() {
     "IL DÉTRUIT SON BUREAU EN 3sec.mp4",
     "TROP FORT.mp4"
   ];
-
   let current = 0;
   const videoElem = document.querySelector(".phone-video");
 
+  // Fonction pour changer la vidéo
   function nextVideo() {
     current = (current + 1) % videos.length;
     videoElem.src = videos[current];
     videoElem.play();
   }
 
-  setInterval(nextVideo, 10000);
+  // Carrousel automatique toutes les 10 secondes
+  setInterval(nextVideo, 40000);
 });
 </script>
+			 <a class="button" href="https://www.twitch.tv/maxenvrai_" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:5px;">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitch.svg" alt="Twitch" style="width:16px; height:16px;"> Twitch
+				</a>
+
+	                <a class="button" href="https://www.tiktok.com/@maxenvrai_" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:5px;">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="TikTok" style="width:16px; height:16px;"> TikTok
+                </a>
+	    
+                <a class="button" href="https://www.youtube.com/@MaxenVraiYTB" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:5px;">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" style="width:16px; height:16px;"> YouTube
+                </a>
+           
+           
+                <a class="button" href="https://www.instagram.com/maxenvrai_" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:5px;">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" style="width:16px; height:16px;"> Instagram
+                </a>
+</div>
+<footer>
+    <p>Copyright © 2026 by ebyvousez_ / All rights reserved</p>
+</footer>
 
 </body>
 </html>
