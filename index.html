@@ -106,17 +106,13 @@ margin-top:10px;
 }
 
 /* LOGOS NOIRS */
-.social-btn img{
-width:18px;
-height:18px;
-filter: invert(0); /* noir pur */
-}
 
-/* CONTENEUR EN ESCALIER */
+/* CONTENEUR VERTICAL */
 .social-stack{
 display:flex;
 flex-direction:column;
 align-items:center;
+gap:12px;
 margin-top:20px;
 }
 
@@ -131,22 +127,56 @@ color:white;
 text-decoration:none;
 border-radius:8px;
 font-weight:bold;
-transition:0.3s;
-width:180px;
+width:200px;
 justify-content:center;
+cursor:pointer;
+
+/* animation entrée */
+opacity:0;
+transform: translateY(20px);
+animation: fadeInUp 0.6s forwards;
+
+transition:0.3s ease;
 }
 
-/* ESCALIER (décalage gauche droite) */
-.s1{ transform: translateX(-60px); }
-.s2{ transform: translateX(-20px); }
-.s3{ transform: translateX(20px); }
-.s4{ transform: translateX(60px); }
+/* apparition progressive */
+.social-stack a:nth-child(1){ animation-delay:0.1s; }
+.social-stack a:nth-child(2){ animation-delay:0.2s; }
+.social-stack a:nth-child(3){ animation-delay:0.3s; }
+.social-stack a:nth-child(4){ animation-delay:0.4s; }
 
+/* LOGOS */
+.social-btn img{
+width:18px;
+height:18px;
+filter: invert(0);
+}
+
+/* HOVER PRO */
 .social-btn:hover{
+transform: translateY(-5px) scale(1.05);
+box-shadow:0 12px 25px rgba(0,0,0,0.4);
 background:#5b6eae;
-transform: scale(1.05);
 }
 
+/* ANIMATION APPARITION */
+@keyframes fadeInUp{
+to{
+opacity:1;
+transform: translateY(0);
+}
+}
+
+/* PULSE AU HOVER */
+.social-btn:hover{
+animation: pulse 0.5s;
+}
+
+@keyframes pulse{
+0%{ transform: translateY(-5px) scale(1.05); }
+50%{ transform: translateY(-5px) scale(1.08); }
+100%{ transform: translateY(-5px) scale(1.05); }
+}
 /* FOOTER */
 footer{
 background:rgba(35,39,42,0.9);
@@ -304,26 +334,31 @@ Disboard
 
 <div class="social-stack">
 
-<a href="https://www.twitch.tv/maxenvrai_" target="_blank" class="social-btn s1">
+<a href="https://www.twitch.tv/maxenvrai_" class="btn">
 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitch.svg">
 Twitch
 </a>
 
-<a href="https://www.tiktok.com/@maxenvrai_" target="_blank" class="social-btn s2">
+<a href="https://www.tiktok.com/@maxenvrai_" class="btn">
 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg">
 TikTok
 </a>
 
-<a href="https://www.youtube.com/@MaxenVraiYTB" target="_blank" class="social-btn s3">
+<a href="https://www.youtube.com/@MaxenVraiYTB" class="btn">
 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg">
 YouTube
 </a>
 
-<a href="https://www.instagram.com/maxenvrai_" target="_blank" class="social-btn s4">
+<a href="https://www.instagram.com/maxenvrai_" class="btn">
 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg">
 Instagram
 </a>
 
+<a href="https://disboard.org/fr/server/1447589127624331286" class="btn">
+<span class="discord-icon">Ⓓ</span>
+Discord
+</a>
+	
 </div>
 
 </div>
