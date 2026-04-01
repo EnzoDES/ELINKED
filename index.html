@@ -122,6 +122,14 @@ iframe {
     transform: scale(1.1);
 }
 
+	   html {
+    scroll-behavior: smooth;
+}
+
+section, div, header {
+    scroll-margin-top: 80px;
+}
+
 /* éviter que contenu passe sous navbar */
 body {
     padding-top: 70px;
@@ -339,13 +347,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <div class="card">
 
-  <h2>Me Contactez</h2>
+  <h2>📩 Me Contactez</h2>
 
   <form action="mailto:enzodesmarets@gmail.com" method="POST" style="display:flex; flex-direction:column; gap:15px; margin-top:10px;">
       <input type="text" name="name" placeholder="Votre nom" required style="padding:12px; border-radius:6px; border:1px solid #ccc;">
       <input type="email" name="email" placeholder="Votre email" required style="padding:12px; border-radius:6px; border:1px solid #ccc;">
       <textarea name="message" placeholder="Votre message" required style="padding:12px; border-radius:6px; border:1px solid #ccc; min-height:120px;"></textarea>
-      <button type="submit" style="padding:12px; background:#00bfff; color:#fff; border:none; border-radius:6px; cursor:pointer; font-size:16px;">Envoyer</button>
+      <button type="submit" style="padding:12px; background:#7289da; color:#fff; border:none; border-radius:6px; cursor:pointer; font-size:16px;">➩ Envoyer</button>
   </form>
 
 </section>
