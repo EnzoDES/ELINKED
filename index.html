@@ -36,12 +36,6 @@ body {
     padding: 20px;
 }
 
-/* 🔝 HEADER NOIR */
-header {
-    padding: 20px;
-    background: black;
-}
-
 /* TITRE */
 h1 {
     color: #ffffff;
@@ -92,12 +86,46 @@ iframe {
 }
 
 /* 📌 NAVBAR FIXE (si tu en as une) */
-nav {
-    position: sticky;
+
+/* 🌫️ NAVBAR GLASS TRANSPARENTE */
+.navbar {
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    padding: 15px 0;
+
+    background: rgba(0, 0, 0, 0.4); /* transparent */
+    backdrop-filter: blur(10px); /* effet verre */
+    -webkit-backdrop-filter: blur(10px);
+
+    z-index: 9999;
 }
 
+/* liens */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+/* hover */
+.navbar a:hover {
+    color: #7289da;
+    transform: scale(1.1);
+}
+
+/* éviter que contenu passe sous navbar */
+body {
+    padding-top: 70px;
+}
 /* 🔻 FOOTER NOIR */
 footer {
     background: black;
@@ -159,7 +187,16 @@ footer {
 		<strong>MaxenVrai_</strong>
     <h1>📢 Bienvenue chez les Vrais !</h1>
     <p>Tu souhaite nous rejoindre ? Retrouve nos differentes pages web ci-dessous 👇</p> 
+
+		<nav class="navbar">
+    <a href="#accueil">Accueil</a>
+    <a href="#qui">Qui sommes-nous</a>
+    <a href="#live">Live</a>
+    <a href="#discord">Discord</a>
+    <a href="#reseaux">Réseaux</a>
+</nav>
 </header>
+
 	<div class="card">
     <h2>👥 Qui sommes-nous ?</h2>
 
