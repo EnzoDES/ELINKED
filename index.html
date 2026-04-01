@@ -31,21 +31,23 @@ scroll-behavior:smooth;
 body{
 margin:0;
 font-family:Arial;
-background:#2c2f33;
+background-image: url('fond.png');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
 color:white;
 }
 
 /* HEADER */
 header{
-background:#23272a;
-color:white;
+background:rgba(35,39,42,0.9);
 text-align:center;
 padding:40px;
 }
 
 /* NAVBAR */
 nav{
-background:#23272a;
+background:rgba(35,39,42,0.9);
 padding:15px;
 text-align:center;
 position:sticky;
@@ -66,7 +68,6 @@ color:#7289da;
 
 /* HERO */
 .hero{
-background:#2c2f33;
 text-align:center;
 padding:60px 20px;
 }
@@ -81,11 +82,12 @@ scroll-margin-top:80px;
 
 /* CARDS */
 .card{
-background:#23272a;
+background:rgba(35,39,42,0.95);
 padding:25px;
 margin:25px 0;
 border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+text-align:center;
 }
 
 /* TITRES */
@@ -94,27 +96,43 @@ border-bottom:3px solid #7289da;
 padding-bottom:10px;
 }
 
-/* BOUTONS */
-button{
-padding:15px 30px;
-font-size:18px;
-background-color:#7289da;
-color:#fff;
-border:none;
-border-radius:8px;
-cursor:pointer;
-transition:0.3s;
-margin:5px;
+/* BOUTONS CENTRÉS */
+.button-container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+margin-top:10px;
 }
 
-button:hover{
+/* SOCIAL BUTTONS */
+.social-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+padding:12px 20px;
+background:#7289da;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.social-btn img{
+width:18px;
+height:18px;
+filter: invert(1);
+}
+
+.social-btn:hover{
 background:#5b6eae;
 }
 
 /* FOOTER */
 footer{
-background:#23272a;
-color:white;
+background:rgba(35,39,42,0.9);
 text-align:center;
 padding:20px;
 }
@@ -125,6 +143,28 @@ width:100%;
 height:400px;
 border:none;
 border-radius:10px;
+}
+
+/* VIDEO PHONE */
+.phone-video-wrapper {
+width:300px;
+height:600px;
+margin:30px auto;
+padding:10px;
+border:15px solid #000;
+border-radius:40px;
+background:#000;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.phone-video {
+width:100%;
+height:100%;
+border-radius:25px;
+object-fit:cover;
 }
 
 </style>
@@ -152,7 +192,7 @@ style="width:120px;height:120px;border-radius:50%;display:block;margin:auto;">
 
 <div class="hero" id="accueil">
 <h1>📢 Bienvenue chez les Vrais !</h1>
-<p>Tu souhaites nous rejoindre ? Découvre tout ci-dessous 👇</p>
+<p>Tu souhaites nous rejoindre ? 👇</p>
 </div>
 
 <section id="commu">
@@ -160,13 +200,9 @@ style="width:120px;height:120px;border-radius:50%;display:block;margin:auto;">
 
 <h2>👥 Qui sommes-nous ?</h2>
 
-<p>Les Vrais, c’est une communauté active et conviviale dont le but principal est de s’amuser et jouer ensemble 🎮.</p>
-
-<p>Notre serveur Discord rassemble des personnes passionnées dans une ambiance détendue et respectueuse.</p>
-
-<p>Tu peux rencontrer du monde, discuter et participer aux événements 🗓️.</p>
-
-<p><strong>Objectif : créer une vraie communauté où tout le monde passe de bons moments ❤️</strong></p>
+<p>Les Vrais, c’est une communauté active et conviviale 🎮</p>
+<p>Ambiance détendue, respect et fun 🔥</p>
+<p><strong>Rejoins-nous et deviens un Vrai 😎</strong></p>
 
 </div>
 </section>
@@ -178,9 +214,12 @@ style="width:120px;height:120px;border-radius:50%;display:block;margin:auto;">
 
 <iframe src="https://player.twitch.tv/?channel=maxenvrai_&parent=enzodes.github.io"></iframe>
 
-<a href="https://www.twitch.tv/maxenvrai_">
-<button>Voir sur Twitch</button>
+<div class="button-container">
+<a href="https://www.twitch.tv/maxenvrai_" target="_blank" class="social-btn">
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitch.svg">
+Twitch
 </a>
+</div>
 
 </div>
 </section>
@@ -188,13 +227,16 @@ style="width:120px;height:120px;border-radius:50%;display:block;margin:auto;">
 <section id="discord">
 <div class="card">
 
-<h2>📌 Rejoins le Discord</h2>
+<h2>📌 Discord</h2>
 
 <iframe src="https://discord.com/widget?id=1447589127624331286&theme=dark"></iframe>
 
-<a href="https://disboard.org/fr/server/1447589127624331286">
-<button>Voir sur Disboard</button>
+<div class="button-container">
+<a href="https://disboard.org/fr/server/1447589127624331286" target="_blank" class="social-btn">
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg">
+Disboard
 </a>
+</div>
 
 </div>
 </section>
@@ -202,20 +244,37 @@ style="width:120px;height:120px;border-radius:50%;display:block;margin:auto;">
 <section id="reseaux">
 <div class="card">
 
-<h2>📱 Réseaux sociaux</h2>
+<h2>📱 Suis-moi sur les réseaux !</h2>
 
-<div style="max-width:300px;margin:auto;">
-<video autoplay loop muted style="width:100%;border-radius:20px;">
+<div class="phone-video-wrapper">
+<video class="phone-video" autoplay playsinline loop>
 <source src="MAUVAISE IDÉE.mp4">
 </video>
 </div>
 
-<br>
+<div class="button-container">
 
-<a href="https://www.twitch.tv/maxenvrai_"><button>Twitch</button></a>
-<a href="https://www.tiktok.com/@maxenvrai_"><button>TikTok</button></a>
-<a href="https://www.youtube.com/@MaxenVraiYTB"><button>YouTube</button></a>
-<a href="https://www.instagram.com/maxenvrai_"><button>Instagram</button></a>
+<a href="https://www.twitch.tv/maxenvrai_" target="_blank" class="social-btn">
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitch.svg">
+Twitch
+</a>
+
+<a href="https://www.tiktok.com/@maxenvrai_" target="_blank" class="social-btn">
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg">
+TikTok
+</a>
+
+<a href="https://www.youtube.com/@MaxenVraiYTB" target="_blank" class="social-btn">
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg">
+YouTube
+</a>
+
+<a href="https://www.instagram.com/maxenvrai_" target="_blank" class="social-btn">
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg">
+Instagram
+</a>
+
+</div>
 
 </div>
 </section>
@@ -224,16 +283,29 @@ style="width:120px;height:120px;border-radius:50%;display:block;margin:auto;">
 <p>© 2026 MaxenVrai_</p>
 </footer>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const videos = [
+    "MAUVAISE IDÉE.mp4",
+    "IL DÉTRUIT SON BUREAU EN 3sec.mp4",
+    "TROP FORT.mp4"
+  ];
+
+  let current = 0;
+  const videoElem = document.querySelector(".phone-video");
+
+  function nextVideo() {
+    current = (current + 1) % videos.length;
+    videoElem.src = videos[current];
+    videoElem.play();
+  }
+
+  setInterval(nextVideo, 10000);
+});
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 
 
